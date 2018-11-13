@@ -13,6 +13,7 @@ const program = (() => {
     }
   }
 
+  
   function displayErrorMessage(message) {
     emptyResults();
     const span = document.createElement('span');
@@ -52,7 +53,7 @@ const program = (() => {
       displayErrorMessage('Lén er ekki skráð');
       return;
     }
-    const [{ domain, registered, lastChange, expires, registrantname, email, address, country }] = domainInfo; /* eslint-disable-line */
+    const [{ domain, registered, lastChange, expires, registrantname, email, address, country }] = domainInfo; 
     const dl = document.createElement('dl');
     results.appendChild(dl);
     addToList(dl, 'Lén', domain);
@@ -76,7 +77,7 @@ const program = (() => {
       .then((data) => {
         displayResults(data.results);
       })
-      .catch((error) => {/* eslint-disable-line */
+      .catch((error) => {
         displayErrorMessage('Villa við að sækja gögn');
       });
   }
